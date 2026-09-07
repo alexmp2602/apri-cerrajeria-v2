@@ -1,0 +1,80 @@
+---
+import Icon from "./Icon.astro";
+import { whatsapp } from "../data/business";
+---
+
+<section class="section services" id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Servicios</span><h2>
+          Una solución para cada acceso.
+        </h2>
+      </div><p>
+        Urgencias y trabajos programados, explicados con claridad antes de
+        empezar.
+      </p>
+    </div><div class="service-grid">
+      <article class="service-card featured">
+        <span class="service-num">01</span><h3>Apertura de casas</h3><p>
+          Puertas cerradas, llaves adentro o cerraduras que dejaron de
+          funcionar.
+        </p><a
+          href={whatsapp(
+            "Hola APRI, necesito consultar por apertura de casas.",
+          )}
+          aria-label="Consultar por Apertura de casas"
+          >Consultar <Icon name="arrow" /></a
+        >
+      </article><article class="service-card">
+        <span class="service-num">02</span><h3>Apertura de autos</h3><p>
+          Acceso a tu vehículo con técnicas cuidadosas y sin forzar de más.
+        </p><a
+          href={whatsapp(
+            "Hola APRI, necesito consultar por apertura de autos.",
+          )}
+          aria-label="Consultar por Apertura de autos"
+          >Consultar <Icon name="arrow" /></a
+        >
+      </article><article class="service-card">
+        <span class="service-num">03</span><h3>Destrabe de cerraduras</h3><p>
+          Diagnóstico y solución de mecanismos trabados en el momento.
+        </p><a
+          href={whatsapp(
+            "Hola APRI, necesito consultar por destrabe de cerraduras.",
+          )}
+          aria-label="Consultar por Destrabe de cerraduras"
+          >Consultar <Icon name="arrow" /></a
+        >
+      </article><article class="service-card">
+        <span class="service-num">04</span><h3>Cambio de combinación</h3><p>
+          Renová la seguridad de cerraduras y cajas fuertes sin reemplazar todo.
+        </p><a
+          href={whatsapp(
+            "Hola APRI, necesito consultar por cambio de combinación.",
+          )}
+          aria-label="Consultar por Cambio de combinación"
+          >Consultar <Icon name="arrow" /></a
+        >
+      </article><article class="service-card">
+        <span class="service-num">05</span><h3>Cerraduras inteligentes</h3><p>
+          Instalación y configuración de accesos digitales y sistemas smart.
+        </p><a
+          href={whatsapp(
+            "Hola APRI, necesito consultar por cerraduras inteligentes.",
+          )}
+          aria-label="Consultar por Cerraduras inteligentes"
+          >Consultar <Icon name="arrow" /></a
+        >
+      </article><article class="service-card">
+        <span class="service-num">06</span><h3>Copias de llaves</h3><p>
+          Duplicados precisos para tu casa, comercio o vehículo.
+        </p><a
+          href={whatsapp("Hola APRI, necesito consultar por copias de llaves.")}
+          aria-label="Consultar por Copias de llaves"
+          >Consultar <Icon name="arrow" /></a
+        >
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/apri-logo.png";
+interface Props {
+  priority?: boolean;
+}
+const { priority = false } = Astro.props;
+---
+
+<Image
+  src={logo}
+  alt="APRI Cerrajería 24 hs"
+  width={240}
+  widths={[240, 480]}
+  sizes="(max-width: 600px) 148px, 240px"
+  format="webp"
+  loading={priority ? "eager" : "lazy"}
+  fetchpriority={priority ? "high" : "auto"}
+/>

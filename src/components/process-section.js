@@ -1,4 +1,0 @@
-import { whatsapp } from './base.js';
-class ProcessSection extends HTMLElement{connectedCallback(){this.innerHTML=`<section class="section process" id="como-funciona"><div class="container"><span class="eyebrow">Simple y directo</span><div class="section-head"><h2>Tres pasos. Una preocupación menos.</h2><a class="text-link" href="${whatsapp('Hola APRI, necesito ayuda. Mi ubicación es: ')}">Empezar ahora →</a></div><ol class="steps"><li><span>01</span><h3>Contanos qué pasó</h3><p>Mandanos tu ubicación, el tipo de puerta o vehículo y una breve descripción.</p></li><li><span>02</span><h3>Coordinamos la visita</h3><p>Confirmamos disponibilidad y te orientamos sobre el trabajo antes de ir.</p></li><li><span>03</span><h3>Resolvemos en el lugar</h3><p>Revisamos el acceso y aplicamos la opción adecuada con el menor impacto posible.</p></li></ol></div></section>`}}
-customElements.define('process-section',ProcessSection);
-

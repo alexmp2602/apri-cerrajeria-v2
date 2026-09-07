@@ -1,0 +1,61 @@
+---
+import Icon from "./Icon.astro";
+import { business } from "../data/business";
+import Brand from "./Brand.astro";
+---
+
+<script>
+  const menu = document.querySelector<HTMLButtonElement>(".menu");
+  const nav = document.querySelector<HTMLElement>("#primary-navigation");
+  if (menu && nav) {
+    nav.dataset.enhanced = "true";
+    menu.hidden = false;
+    const setOpen = (open: boolean) => {
+      menu.setAttribute("aria-expanded", String(open));
+      menu.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+      nav.classList.toggle("open", open);
+    };
+    menu.addEventListener("click", () =>
+      setOpen(menu.getAttribute("aria-expanded") !== "true"),
+    );
+    nav.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLAnchorElement) setOpen(false);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" &&
+        menu.getAttribute("aria-expanded") === "true"
+      ) {
+        setOpen(false);
+        menu.focus();
+      }
+    });
+    document.addEventListener("click", (event) => {
+      if (
+        event.target instanceof Node &&
+        !nav.contains(event.target) &&
+        !menu.contains(event.target)
+      )
+        setOpen(false);
+    });
+  }
+</script>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="APRI Cerrajería 24 hs, inicio"
+      ><Brand priority /></a
+    ><nav id="primary-navigation" aria-label="Principal">
+      <a href="#servicios">Servicios</a><a href="#como-funciona"
+        >Cómo funciona</a
+      ><a href="#opiniones">Opiniones</a><a href="#zona">Cobertura</a>
+    </nav><a class="button button-small" href={`tel:${business.phone}`}
+      ><Icon name="phone" /><span>{business.displayPhone}</span></a
+    ><button
+      class="menu"
+      hidden
+      aria-controls="primary-navigation"
+      aria-label="Abrir menú"
+      aria-expanded="false"><span></span><span></span></button
+    >
+  </div>
+</header>

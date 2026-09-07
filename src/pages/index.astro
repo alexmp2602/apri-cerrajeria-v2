@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ServicesSection from "../components/ServicesSection.astro";
+import TrustSection from "../components/TrustSection.astro";
+import ProcessSection from "../components/ProcessSection.astro";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
+import CoverageSection from "../components/CoverageSection.astro";
+import FaqSection from "../components/FaqSection.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import MobileCta from "../components/MobileCta.astro";
+---
+
+<BaseLayout>
+  <SiteHeader />
+  <main id="contenido">
+    <HeroSection />
+    <ServicesSection />
+    <TrustSection />
+    <ProcessSection />
+    <TestimonialsSection />
+    <CoverageSection />
+    <FaqSection />
+  </main>
+  <SiteFooter />
+  <MobileCta />
+</BaseLayout>

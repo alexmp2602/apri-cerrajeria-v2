@@ -1,0 +1,60 @@
+---
+import "../styles/main.css";
+import "../styles/accessibility.css";
+import { business } from "../data/business";
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "Cerrajería APRI 24 hs | Gran Mendoza",
+  description = "Cerrajería APRI 24 hs en Gran Mendoza. Aperturas de casas y autos, destrabes, cambios de combinación, cerraduras inteligentes y copias de llaves.",
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Locksmith",
+  name: business.name,
+  telephone: business.phone,
+  email: business.email,
+  url: canonical.href,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: business.street,
+    addressLocality: business.locality,
+    addressRegion: business.region,
+    addressCountry: "AR",
+  },
+  areaServed: business.serviceArea,
+  openingHours: "Mo-Su 00:00-23:59",
+};
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c0c0c" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/assets/brand/apri.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(schema).replace(/</g, "\\u003c")}
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+    <slot />
+  </body>
+</html>

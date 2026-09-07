@@ -1,5 +1,0 @@
-import { icon } from './base.js';
-const reviews=[['“Respondió rápido el mensaje y acudió enseguida. Recomendado.”','Rocío Muñiz'],['“Solucionó a la perfección una urgencia. Educado, amable y recomendable.”','Cristy Brito'],['“Un feriado a las 2 AM llegó puntual y en 5 minutos resolvió todo.”','Gabriela Aguilera'],['“Muy buena atención. Me salvó las papas con el auto a medianoche.”','Alberto Alonso']];
-class TestimonialsSection extends HTMLElement{connectedCallback(){this.innerHTML=`<section class="section reviews" id="opiniones"><div class="container"><div class="section-head"><div><span class="eyebrow">Experiencias reales</span><h2>Cuando más importa, respondemos.</h2></div><div class="rating"><span>${Array(5).fill(icon('star')).join('')}</span><small>Opiniones de clientes</small></div></div><div class="review-track">${reviews.map(([q,n])=>`<figure><div class="quote">“</div><blockquote>${q}</blockquote><figcaption><span>${n[0]}</span><b>${n}</b></figcaption></figure>`).join('')}</div></div></section>`}}
-customElements.define('testimonials-section',TestimonialsSection);
-

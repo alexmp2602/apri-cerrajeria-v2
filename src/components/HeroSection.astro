@@ -1,0 +1,42 @@
+---
+import Icon from "./Icon.astro";
+import { business, whatsapp } from "../data/business";
+import BrandVideo from "./BrandVideo.astro";
+---
+
+<section class="hero" id="inicio">
+  <div class="hero-lines" aria-hidden="true"></div><div
+    class="container hero-grid"
+  >
+    <div class="hero-copy">
+      <div class="status"><i></i> Atención todos los días · 24 horas</div><h1>
+        Tu seguridad,<br /><em>en buenas manos.</em>
+      </h1><p class="lead">
+        Cerrajería de urgencia para casas y autos en Gran Mendoza. Atención
+        directa, trabajo cuidadoso y respuesta todos los días.
+      </p><div class="hero-actions">
+        <a
+          class="button button-primary"
+          href={whatsapp("Hola APRI, necesito ayuda ahora. Estoy en: ")}
+          ><Icon name="message" /> Pedir ayuda por WhatsApp <Icon
+            name="arrow"
+          /></a
+        ><a class="button button-ghost" href={`tel:${business.phone}`}
+          ><Icon name="phone" /> Llamar ahora</a
+        >
+      </div><div class="hero-proof">
+        <span><Icon name="clock" /> Atención 24/7</span><span
+          ><Icon name="pin" /> Gran Mendoza</span
+        ><span><Icon name="shield" /> Trabajo profesional</span>
+      </div>
+    </div><div class="hero-visual" aria-label="Identidad de Cerrajería APRI">
+      <div class="video-wrap">
+        <BrandVideo /><div class="video-shade"></div><div class="video-label">
+          <span class="pulse"></span><div>
+            <b>APRI Cerrajería</b><small>Respuesta cuando la necesitás</small>
+          </div>
+        </div>
+      </div><div class="big-number">24<sup>hs</sup></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import Icon from "./Icon.astro";
+import { business, whatsapp } from "../data/business";
+import Brand from "./Brand.astro";
+---
+
+<footer>
+  <div class="container footer-main">
+    <div>
+      <a class="brand footer-brand" href="#inicio"><Brand /></a><h2>
+        Guardá el número.<br />Ojalá no lo necesites.
+      </h2>
+    </div><div class="footer-contact">
+      <span>Contacto directo</span><a href={`tel:${business.phone}`}
+        >{business.displayPhone}</a
+      ><a href={`mailto:${business.email}`}>{business.email}</a><a
+        href={whatsapp("Hola APRI, necesito un servicio de cerrajería.")}
+        >WhatsApp <Icon name="arrow" /></a
+      >
+    </div><div class="footer-contact">
+      <span>Base y horarios</span><p>
+        Tropero Sosa 360<br />San José, Mendoza
+      </p><p>Todos los días<br />24 horas</p>
+    </div>
+  </div><div class="container footer-bottom">
+    <p>© {new Date().getFullYear()} Cerrajería APRI.</p><p>
+      Servicio en Gran Mendoza, Argentina.
+    </p>
+  </div>
+</footer>

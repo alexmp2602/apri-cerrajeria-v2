@@ -1,0 +1,74 @@
+---
+import { getImage } from "astro:assets";
+import logo from "../assets/apri-logo.png";
+const poster = await getImage({ src: logo, width: 720, format: "webp" });
+---
+
+<video
+  id="brand-video"
+  loop
+  muted
+  playsinline
+  controls
+  preload="none"
+  poster={poster.src}
+  aria-label="Animación del logotipo de APRI Cerrajería 24 horas"
+>
+  <source src="/assets/media/apri-brand.mp4" type="video/mp4" />
+  Tu navegador no reproduce este video. <a href="/assets/media/apri-brand.mp4"
+    >Ver video de APRI</a
+  >.
+</video>
+<button class="video-toggle" type="button" hidden aria-controls="brand-video"
+  >Reproducir animación</button
+>
+<script>
+  const video = document.querySelector<HTMLVideoElement>("#brand-video");
+  const button = document.querySelector<HTMLButtonElement>(".video-toggle");
+  if (video && button) {
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const connection = (
+      navigator as Navigator & { connection?: { saveData?: boolean } }
+    ).connection;
+    video.controls = false;
+    button.hidden = false;
+    const update = () => {
+      button.textContent = video.paused
+        ? "Reproducir animación"
+        : "Pausar animación";
+    };
+    video.addEventListener("play", update);
+    video.addEventListener("pause", update);
+    button.addEventListener("click", () => {
+      if (video.paused)
+        void video.play().catch(() => {
+          video.controls = true;
+          update();
+        });
+      else video.pause();
+    });
+    motion.addEventListener("change", () => {
+      if (motion.matches) video.pause();
+    });
+    if (!motion.matches && !connection?.saveData)
+      void video.play().catch(update);
+  }
+</script>
+<style>
+  .video-toggle {
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    left: 18px;
+    max-width: 65%;
+    min-height: 44px;
+    border: 1px solid #ffcc29;
+    border-radius: 10px;
+    padding: 8px 14px;
+    color: white;
+    background: #101010;
+    font: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+</style>
