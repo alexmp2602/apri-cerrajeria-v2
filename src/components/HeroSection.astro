@@ -1,5 +1,6 @@
 ---
 import Icon from "./Icon.astro";
+import WhatsAppIcon from "./WhatsAppIcon.astro";
 import { business, whatsapp } from "../data/business";
 import BrandVideo from "./BrandVideo.astro";
 ---
@@ -19,7 +20,7 @@ import BrandVideo from "./BrandVideo.astro";
         <a
           class="button button-primary"
           href={whatsapp("Hola APRI, necesito ayuda ahora. Estoy en: ")}
-          ><Icon name="message" /> Pedir ayuda por WhatsApp <Icon
+          ><WhatsAppIcon /> Pedir ayuda por WhatsApp <Icon
             name="arrow"
           /></a
         ><a class="button button-ghost" href={`tel:${business.phone}`}

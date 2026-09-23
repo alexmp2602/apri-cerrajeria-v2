@@ -1,11 +1,12 @@
 ---
 import Icon from "./Icon.astro";
+import WhatsAppIcon from "./WhatsAppIcon.astro";
 import { business, whatsapp } from "../data/business";
 ---
 
 <aside class="mobile-cta" aria-label="Contacto rápido">
   <a href={`tel:${business.phone}`}><Icon name="phone" /> Llamar</a><a
     href={whatsapp("Hola APRI, necesito ayuda ahora. Estoy en: ")}
-    ><Icon name="message" /> WhatsApp</a
+    ><WhatsAppIcon /> WhatsApp</a
   >
 </aside>
