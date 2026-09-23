@@ -1,0 +1,44 @@
+---
+import Icon from "./Icon.astro";
+import { whatsapp } from "../data/business";
+---
+
+<section class="section smart-locks" id="cerraduras-inteligentes">
+  <div class="container smart-grid">
+    <div class="smart-art" aria-hidden="true">
+      <span class="art-caption">APRI / ACCESOS INTELIGENTES</span>
+      <div class="door-line"></div><div class="lock-illustration">
+        <div class="lock-ring"><Icon name="shield" /></div><div
+          class="lock-dots"
+        >
+          ● ● ●<br />● ● ●<br />● ● ●
+        </div><div class="lock-handle"></div>
+      </div>
+      <span class="art-footnote">Ilustración de referencia</span>
+    </div>
+    <div class="smart-copy">
+      <span class="eyebrow">Venta e instalación</span>
+      <h2>Tu próxima llave<br />puede ser <em>inteligente.</em></h2>
+      <p>
+        ¿Estás pensando en cambiar la cerradura de tu casa o comercio? Te
+        ayudamos a elegir una opción para tu puerta y coordinamos la
+        instalación.
+      </p>
+      <ul class="smart-points">
+        <li><Icon name="check" /> Asesoramiento antes de elegir</li><li>
+          <Icon name="check" /> Revisión de la puerta y compatibilidad
+        </li><li><Icon name="check" /> Venta e instalación con APRI</li>
+      </ul>
+      <a
+        class="button button-dark"
+        href={whatsapp(
+          "Hola APRI, me interesa la venta e instalación de cerraduras inteligentes. Les envío una foto de mi puerta.",
+        )}>Consultar por cerraduras inteligentes <Icon name="arrow" /></a
+      >
+      <p class="smart-note">
+        Mandanos una foto de tu puerta. Consultá modelos, disponibilidad y
+        presupuesto.
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,12 @@
-# Cerrajería APRI 24 hs — Versión 2
+# Cerrajería APRI 24 hs — Versión 3
 
 Rediseño independiente de APRI en Gran Mendoza, construido con **Astro 7.3.1**, TypeScript estricto y HTML estático. Este repositorio V2 no modifica el sitio ni el repositorio original.
+
+## Renovación visual V3
+
+Portada orientada a urgencias, símbolo circular de APRI, sección destacada de venta e instalación de cerraduras inteligentes y bloque del local. Los horarios se centralizan en `src/data/business.ts` y se reutilizan en el pie y los datos estructurados. La atención del local termina a medianoche; el servicio de urgencias sigue disponible las 24 horas.
+
+La cerradura ilustrada es una referencia visual, no un modelo del catálogo. Falta incorporar las fotos nuevas del local y los materiales del producto cuando estén disponibles. Antes de reemplazar el sitio original, coordinar las URLs de campañas y la medición existente.
 
 ## Decisión de arquitectura
 

@@ -10,7 +10,7 @@ test("Astro entrega todo el contenido sin renderizado del cliente", () => {
   assert.match(html, /Astro v7\.3\.1/);
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1);
   for (const content of [
-    "Tu seguridad",
+    "Te ayudamos a entrar",
     "Apertura de casas",
     "Copias de llaves",
     "Tropero Sosa",
@@ -60,4 +60,30 @@ test("video y menú tienen alternativas y controles accesibles", () => {
   assert.match(html, /prefers-reduced-motion/);
   assert.match(html, /<video[^>]*controls/);
   assert.doesNotMatch(html, /<video[^>]*autoplay/);
+});
+
+test("los horarios del local se distinguen del servicio de urgencias", () => {
+  const [, raw] = html.match(
+    /<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/s,
+  );
+  const data = JSON.parse(raw);
+  assert.equal(data.openingHours, undefined);
+  assert.deepEqual(
+    data.openingHoursSpecification.map(({ opens, closes }) => [opens, closes]),
+    [
+      ["08:00", "00:00"],
+      ["09:00", "00:00"],
+    ],
+  );
+  assert.equal(
+    data.openingHoursSpecification.flatMap(({ dayOfWeek }) => dayOfWeek).length,
+    7,
+  );
+  for (const text of [
+    "08:00 a 00:00",
+    "09:00 a 00:00",
+    "Urgencias las 24 horas",
+    "Venta e instalación",
+  ])
+    assert.ok(html.includes(text), text);
 });

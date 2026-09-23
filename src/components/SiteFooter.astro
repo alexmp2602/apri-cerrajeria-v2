@@ -1,6 +1,6 @@
 ---
 import Icon from "./Icon.astro";
-import { business, whatsapp } from "../data/business";
+import { business, shopHours, whatsapp } from "../data/business";
 import Brand from "./Brand.astro";
 ---
 
@@ -18,9 +18,17 @@ import Brand from "./Brand.astro";
         >WhatsApp <Icon name="arrow" /></a
       >
     </div><div class="footer-contact">
-      <span>Base y horarios</span><p>
+      <span>Local y horarios</span><p>
         Tropero Sosa 360<br />San José, Mendoza
-      </p><p>Todos los días<br />24 horas</p>
+      </p>{
+        shopHours.map(({ label, display }) => (
+          <p>
+            {label}
+            <br />
+            {display}
+          </p>
+        ))
+      }<p><strong>Urgencias las 24 horas</strong></p>
     </div>
   </div><div class="container footer-bottom">
     <p>© {new Date().getFullYear()} Cerrajería APRI.</p><p>

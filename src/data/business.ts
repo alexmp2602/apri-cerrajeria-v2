@@ -14,3 +14,20 @@ export function whatsapp(
 ) {
   return `https://wa.me/${business.phone.replace("+", "")}?text=${encodeURIComponent(message)}`;
 }
+
+export const shopHours = [
+  {
+    label: "Lunes a viernes",
+    display: "08:00 a 00:00",
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "00:00",
+  },
+  {
+    label: "Sábados y domingos",
+    display: "09:00 a 00:00",
+    days: ["Saturday", "Sunday"],
+    opens: "09:00",
+    closes: "00:00",
+  },
+] as const;

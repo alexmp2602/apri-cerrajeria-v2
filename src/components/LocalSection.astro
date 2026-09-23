@@ -1,0 +1,55 @@
+---
+import Icon from "./Icon.astro";
+import { business, shopHours, whatsapp } from "../data/business";
+const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${business.street}, ${business.locality}, ${business.region}, Argentina`)}`;
+---
+
+<section class="section local-section" id="local">
+  <div class="container local-grid">
+    <div>
+      <span class="eyebrow">APRI en San José</span><h2>
+        Un local cerca.<br />Un contacto directo.
+      </h2><p>
+        Acercate por una copia de llaves o para consultar por tu cerradura.
+        También coordinamos trabajos a domicilio en Gran Mendoza.
+      </p><a
+        class="text-link"
+        href={maps}
+        target="_blank"
+        rel="noopener noreferrer">Cómo llegar <Icon name="arrow" /></a
+      >
+    </div>
+    <div class="hours-card">
+      <span class="eyebrow">Atención en el local</span><h3>
+        {business.street}
+      </h3><p>{business.locality}, {business.region}</p><dl>
+        {
+          shopHours.map(({ label, display }) => (
+            <div>
+              <>
+                <dt>{label}</dt>
+                <dd>{display}</dd>
+              </>
+            </div>
+          ))
+        }
+      </dl><small>00:00 es medianoche. Consultanos por feriados.</small><div
+        class="emergency-line"
+      >
+        <Icon name="clock" /><div>
+          <strong>Urgencias las 24 horas</strong><span
+            >Para una apertura urgente, llamanos.</span
+          >
+        </div><a
+          href={`tel:${business.phone}`}
+          aria-label="Llamar por una urgencia"><Icon name="arrow" /></a
+        >
+      </div><a
+        class="local-whatsapp"
+        href={whatsapp(
+          "Hola APRI, quiero consultar por un trabajo en el local.",
+        )}>Consultar por WhatsApp →</a
+      >
+    </div>
+  </div>
+</section>
