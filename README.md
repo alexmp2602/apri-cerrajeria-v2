@@ -6,7 +6,7 @@ Rediseño independiente de APRI en Gran Mendoza, construido con **Astro 7.3.1**,
 
 Portada orientada a urgencias, símbolo circular de APRI, sección destacada de venta e instalación de cerraduras inteligentes y bloque del local. Los horarios se centralizan en `src/data/business.ts` y se reutilizan en el pie y los datos estructurados. La atención del local termina a medianoche; el servicio de urgencias sigue disponible las 24 horas.
 
-La cerradura ilustrada es una referencia visual, no un modelo del catálogo. Falta incorporar las fotos nuevas del local y los materiales del producto cuando estén disponibles. Antes de reemplazar el sitio original, coordinar las URLs de campañas y la medición existente.
+Las imágenes de D1 Pro, D2 Vexa y D3 Ultra provienen del sitio oficial [Privé Digital Force](https://privedigitalforce.com.ar/). Se guardan en `src/assets/locks/` y Astro genera las versiones WebP. Archivos originales: `/wp-content/uploads/2026/05/D1-PRO-copia-1-600x600.png`, `D2-VEXA-copia-1-600x600.png` y `D3-ULTRA-copia-1-600x600.png`. Falta incorporar las fotos nuevas del local. Antes de reemplazar el sitio original, coordinar las URLs de campañas y la medición existente.
 
 ## Decisión de arquitectura
 
