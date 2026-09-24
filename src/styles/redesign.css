@@ -189,80 +189,6 @@
   margin-top: 15px;
   color: #504519;
 }
-.smart-art {
-  position: relative;
-  height: 435px;
-  background: #191918;
-  border-radius: 6px;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-}
-.art-caption,
-.art-footnote {
-  position: absolute;
-  left: 25px;
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  color: #d8c987;
-}
-.art-caption {
-  top: 24px;
-}
-.art-footnote {
-  bottom: 23px;
-  color: #b4b2a7;
-  letter-spacing: 0.03em;
-}
-.door-line {
-  position: absolute;
-  inset: 0 50px 0 auto;
-  width: 1px;
-  background: #494638;
-  box-shadow: 10px 0 #252520;
-}
-.lock-illustration {
-  position: relative;
-  width: 94px;
-  height: 270px;
-  background: linear-gradient(100deg, #424340, #151616 45%, #292b28);
-  border: 2px solid #67685d;
-  border-radius: 40px;
-  box-shadow: 14px 20px 20px #0007;
-  transform: rotate(-9deg);
-}
-.lock-ring {
-  width: 44px;
-  height: 44px;
-  border: 1px solid #aa9650;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  margin: 22px auto;
-  color: #dfc872;
-}
-.lock-ring svg {
-  width: 23px;
-}
-.lock-dots {
-  font-size: 10px;
-  letter-spacing: 8px;
-  color: #bdbbad;
-  text-align: center;
-  padding-left: 8px;
-  line-height: 2.4;
-}
-.lock-handle {
-  position: absolute;
-  width: 150px;
-  height: 26px;
-  background: linear-gradient(#76776d, #2a2c28 50%, #121411);
-  border: 1px solid #7c7c6a;
-  border-radius: 20px;
-  top: 174px;
-  left: 25px;
-  box-shadow: 0 8px 10px #0008;
-}
 .services {
   background: #f7f5ee;
 }
@@ -462,9 +388,6 @@
   .smart-grid {
     gap: 30px;
   }
-  .smart-art {
-    height: 400px;
-  }
   .smart-copy h2,
   .local-grid h2 {
     font-size: 2.55rem;
@@ -558,18 +481,12 @@
   .local-grid h2 {
     font-size: 2.55rem;
   }
-  .smart-art {
-    height: 330px;
-  }
   .smart-copy .button {
     width: 100%;
     min-height: 56px;
   }
   .smart-points {
     font-size: 0.9rem;
-  }
-  .smart-art .lock-illustration {
-    transform: rotate(-9deg) scale(0.85);
   }
   .hours-card {
     padding: 24px 18px;
@@ -596,5 +513,37 @@
   }
   .footer-main h2 {
     font-size: 2.25rem;
+  }
+}
+
+.hero-smart-link {
+  display: block;
+  max-width: 470px;
+  margin: 0 0 25px;
+  color: #d0cec5;
+  font-size: 0.85rem;
+}
+.hero-smart-link span {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  color: var(--acid);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.header nav a:focus-visible {
+  outline-offset: 2px;
+}
+@media (max-width: 900px) {
+  .nav nav {
+    max-height: calc(100dvh - 150px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button:hover,
+  .service-card:hover {
+    transform: none;
   }
 }

@@ -15,11 +15,24 @@ import Brand from "./Brand.astro";
       menu.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
       nav.classList.toggle("open", open);
     };
+    window
+      .matchMedia("(min-width: 901px)")
+      .addEventListener("change", () => setOpen(false));
     menu.addEventListener("click", () =>
       setOpen(menu.getAttribute("aria-expanded") !== "true"),
     );
     nav.addEventListener("click", (event) => {
-      if (event.target instanceof HTMLAnchorElement) setOpen(false);
+      if (event.target instanceof Element) {
+        const link = event.target.closest<HTMLAnchorElement>('a[href^="#"]');
+        if (link) {
+          setOpen(false);
+          const section = document.querySelector<HTMLElement>(link.hash);
+          if (section) {
+            section.setAttribute("tabindex", "-1");
+            section.focus({ preventScroll: true });
+          }
+        }
+      }
     });
     document.addEventListener("keydown", (event) => {
       if (

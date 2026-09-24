@@ -20,13 +20,15 @@ import BrandVideo from "./BrandVideo.astro";
         <a
           class="button button-primary"
           href={whatsapp("Hola APRI, necesito ayuda ahora. Estoy en: ")}
-          ><WhatsAppIcon /> Pedir ayuda por WhatsApp <Icon
-            name="arrow"
-          /></a
+          ><WhatsAppIcon /> Pedir ayuda por WhatsApp <Icon name="arrow" /></a
         ><a class="button button-ghost" href={`tel:${business.phone}`}
           ><Icon name="phone" /> Llamar ahora</a
         >
-      </div><div class="hero-proof">
+      </div><a class="hero-smart-link" href="#cerraduras-inteligentes"
+        >¿Buscás una cerradura inteligente? <span
+          >Conocé los modelos <Icon name="arrow" /></span
+        ></a
+      ><div class="hero-proof">
         <span><Icon name="clock" /> Urgencias 24/7</span><span
           ><Icon name="pin" /> Gran Mendoza</span
         ><span><Icon name="shield" /> Trabajo profesional</span>

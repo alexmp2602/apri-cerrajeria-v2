@@ -37,6 +37,13 @@ const poster = await getImage({ src: logo, width: 720, format: "webp" });
         ? "Reproducir animación"
         : "Pausar animación";
     };
+    const visibility = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) video.pause();
+    });
+    visibility.observe(video);
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) video.pause();
+    });
     video.addEventListener("play", update);
     video.addEventListener("pause", update);
     button.addEventListener("click", () => {

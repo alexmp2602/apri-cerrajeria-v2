@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import d1 from "../assets/locks/d1-pro.png";
 import d2 from "../assets/locks/d2-vexa.png";
 import d3 from "../assets/locks/d3-ultra.png";
+import WhatsAppIcon from "./WhatsAppIcon.astro";
 import Icon from "./Icon.astro";
 import { whatsapp } from "../data/business";
 ---
@@ -38,6 +39,15 @@ import { whatsapp } from "../data/business";
                 <strong>{name}</strong>
               </>
             </figcaption>
+            <a
+              class="product-inquiry"
+              href={whatsapp(
+                `Hola APRI, me interesa la cerradura Privé ${name}. ¿Me pasan precio y opciones de instalación?`,
+              )}
+              aria-label={`Consultar precio e instalación de Privé ${name}`}
+            >
+              <WhatsAppIcon /> Consultar <Icon name="arrow" />
+            </a>
           </figure>
         ))
       }
@@ -109,6 +119,22 @@ import { whatsapp } from "../data/business";
     font-family: var(--font-display);
     font-size: 1.1rem;
     line-height: 1.4;
+  }
+  .product-inquiry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    margin: 12px 4px 0;
+    border-top: 1px solid #dedbd0;
+    padding: 10px 0 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+  .product-inquiry:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
   @media (max-width: 600px) {
     .product-gallery {

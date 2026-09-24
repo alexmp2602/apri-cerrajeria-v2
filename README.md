@@ -49,4 +49,4 @@ Requiere Node.js 22.12 o superior. Instalar con `npm ci`; iniciar con `npm run d
 
 La salida estática queda en `dist/`.
 
-`SITE_URL` configura la URL canónica al compilar; por defecto apunta a la demostración V2. No usar el dominio original hasta que el dueño autorice reemplazar su sitio. La configuración `.openai/hosting.json` conserva la vista privada de Sites existente. Para otros alojamientos estáticos, publicar `dist/` en la raíz del dominio.
+`SITE_URL` configura la URL canónica al compilar; por defecto apunta a `https://apri-cerrajeria-v2.vercel.app`. No usar el dominio original hasta que el dueño autorice reemplazar su sitio. La configuración `.openai/hosting.json` conserva la vista privada de Sites existente. Para otros alojamientos estáticos, publicar `dist/` en la raíz del dominio.
